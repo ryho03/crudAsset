@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,10 @@ namespace crudAsset
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'assetRegister_dbDataSet1.modelInventoryTable' table. You can move, or remove it, as needed.
+            this.modelInventoryTableTableAdapter.Fill(this.assetRegister_dbDataSet1.modelInventoryTable);
+            // TODO: This line of code loads data into the 'assetRegister_dbDataSet.userTable' table. You can move, or remove it, as needed.
+            this.userTableTableAdapter.Fill(this.assetRegister_dbDataSet.userTable);
 
         }
 
@@ -72,6 +77,26 @@ namespace crudAsset
             {
                 this.Close();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AutoClosingMessageBox.Show("Uploading asset to database", "Uploading", 2000);
+            string cmdString = "INSERT INTO assestRegisterTable (ColName) VALUES (@val1)";
+
+            using (connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand(cmdString, connection))
+                {
+                    connection.Open();
+                    comm.Connection = connection;
+                    comm.CommandText = cmdString;
+                    comm.Parameters.AddWithValue("@val1", nameTextBox.Text);
+
+                    comm.ExecuteNonQuery();
+                }
+            }
+
         }
     }
 }
