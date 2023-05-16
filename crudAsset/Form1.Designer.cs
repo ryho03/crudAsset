@@ -33,34 +33,35 @@
             this.addAsset_pnl = new System.Windows.Forms.Panel();
             this.addAssetUpload_btn = new System.Windows.Forms.Button();
             this.addAssignUser_combox = new System.Windows.Forms.ComboBox();
+            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assetRegister_dbDataSet = new crudAsset.AssetRegister_dbDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.addAssetMod_combox = new System.Windows.Forms.ComboBox();
+            this.modelInventoryTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.assetRegister_dbDataSet1 = new crudAsset.AssetRegister_dbDataSet1();
             this.label5 = new System.Windows.Forms.Label();
             this.addAssetBack_btn = new System.Windows.Forms.Button();
             this.addAssetType_combox = new System.Windows.Forms.ComboBox();
+            this.modelInventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.addAssetNum_txtbx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.exitApp_btn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.vaa_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.addAsset_btn = new System.Windows.Forms.Button();
-            this.assetRegister_dbDataSet = new crudAsset.AssetRegister_dbDataSet();
-            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableTableAdapter = new crudAsset.AssetRegister_dbDataSetTableAdapters.userTableTableAdapter();
             this.assetRegisterdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.assetRegister_dbDataSet1 = new crudAsset.AssetRegister_dbDataSet1();
-            this.modelInventoryTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelInventoryTableTableAdapter = new crudAsset.AssetRegister_dbDataSet1TableAdapters.modelInventoryTableTableAdapter();
-            this.modelInventoryTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.exitApp_btn = new System.Windows.Forms.Button();
+            this.ane_btn = new System.Windows.Forms.Button();
             this.addAsset_pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetRegisterdbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetRegisterdbDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +70,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 23);
+            this.label1.Size = new System.Drawing.Size(164, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "allpay Asset Register";
             // 
@@ -114,12 +115,22 @@
             this.addAssignUser_combox.TabIndex = 15;
             this.addAssignUser_combox.ValueMember = "userName";
             // 
+            // userTableBindingSource
+            // 
+            this.userTableBindingSource.DataMember = "userTable";
+            this.userTableBindingSource.DataSource = this.assetRegister_dbDataSet;
+            // 
+            // assetRegister_dbDataSet
+            // 
+            this.assetRegister_dbDataSet.DataSetName = "AssetRegister_dbDataSet";
+            this.assetRegister_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(28, 213);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 15);
+            this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Assigned User";
             // 
@@ -134,12 +145,22 @@
             this.addAssetMod_combox.TabIndex = 13;
             this.addAssetMod_combox.ValueMember = "itemModel";
             // 
+            // modelInventoryTableBindingSource1
+            // 
+            this.modelInventoryTableBindingSource1.DataMember = "modelInventoryTable";
+            this.modelInventoryTableBindingSource1.DataSource = this.assetRegister_dbDataSet1;
+            // 
+            // assetRegister_dbDataSet1
+            // 
+            this.assetRegister_dbDataSet1.DataSetName = "AssetRegister_dbDataSet1";
+            this.assetRegister_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(28, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 15);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 12;
             this.label5.Text = "Asset Model";
             // 
@@ -164,12 +185,17 @@
             this.addAssetType_combox.TabIndex = 10;
             this.addAssetType_combox.ValueMember = "itemType";
             // 
+            // modelInventoryTableBindingSource
+            // 
+            this.modelInventoryTableBindingSource.DataMember = "modelInventoryTable";
+            this.modelInventoryTableBindingSource.DataSource = this.assetRegister_dbDataSet1;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(28, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Asset Type";
             // 
@@ -185,7 +211,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(28, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Asset Number";
             // 
@@ -195,28 +221,19 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 23);
+            this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Add Asset";
             // 
-            // exitApp_btn
+            // vaa_btn
             // 
-            this.exitApp_btn.Location = new System.Drawing.Point(295, 275);
-            this.exitApp_btn.Name = "exitApp_btn";
-            this.exitApp_btn.Size = new System.Drawing.Size(146, 40);
-            this.exitApp_btn.TabIndex = 9;
-            this.exitApp_btn.Text = "Exit";
-            this.exitApp_btn.UseVisualStyleBackColor = true;
-            this.exitApp_btn.Click += new System.EventHandler(this.exitApp_btn_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(295, 229);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 40);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "View All Assets";
-            this.button3.UseVisualStyleBackColor = true;
+            this.vaa_btn.Location = new System.Drawing.Point(295, 229);
+            this.vaa_btn.Name = "vaa_btn";
+            this.vaa_btn.Size = new System.Drawing.Size(146, 40);
+            this.vaa_btn.TabIndex = 8;
+            this.vaa_btn.Text = "View All Assets";
+            this.vaa_btn.UseVisualStyleBackColor = true;
+            this.vaa_btn.Click += new System.EventHandler(this.vaa_btn_Click);
             // 
             // button2
             // 
@@ -237,16 +254,6 @@
             this.addAsset_btn.UseVisualStyleBackColor = true;
             this.addAsset_btn.Click += new System.EventHandler(this.addAsset_btn_Click_1);
             // 
-            // assetRegister_dbDataSet
-            // 
-            this.assetRegister_dbDataSet.DataSetName = "AssetRegister_dbDataSet";
-            this.assetRegister_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userTableBindingSource
-            // 
-            this.userTableBindingSource.DataMember = "userTable";
-            this.userTableBindingSource.DataSource = this.assetRegister_dbDataSet;
-            // 
             // userTableTableAdapter
             // 
             this.userTableTableAdapter.ClearBeforeFill = true;
@@ -256,33 +263,37 @@
             this.assetRegisterdbDataSetBindingSource.DataSource = this.assetRegister_dbDataSet;
             this.assetRegisterdbDataSetBindingSource.Position = 0;
             // 
-            // assetRegister_dbDataSet1
-            // 
-            this.assetRegister_dbDataSet1.DataSetName = "AssetRegister_dbDataSet1";
-            this.assetRegister_dbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // modelInventoryTableBindingSource
-            // 
-            this.modelInventoryTableBindingSource.DataMember = "modelInventoryTable";
-            this.modelInventoryTableBindingSource.DataSource = this.assetRegister_dbDataSet1;
-            // 
             // modelInventoryTableTableAdapter
             // 
             this.modelInventoryTableTableAdapter.ClearBeforeFill = true;
             // 
-            // modelInventoryTableBindingSource1
+            // exitApp_btn
             // 
-            this.modelInventoryTableBindingSource1.DataMember = "modelInventoryTable";
-            this.modelInventoryTableBindingSource1.DataSource = this.assetRegister_dbDataSet1;
+            this.exitApp_btn.Location = new System.Drawing.Point(327, 228);
+            this.exitApp_btn.Name = "exitApp_btn";
+            this.exitApp_btn.Size = new System.Drawing.Size(146, 40);
+            this.exitApp_btn.TabIndex = 20;
+            this.exitApp_btn.Text = "Exit";
+            this.exitApp_btn.UseVisualStyleBackColor = true;
+            // 
+            // ane_btn
+            // 
+            this.ane_btn.Location = new System.Drawing.Point(327, 182);
+            this.ane_btn.Name = "ane_btn";
+            this.ane_btn.Size = new System.Drawing.Size(146, 40);
+            this.ane_btn.TabIndex = 21;
+            this.ane_btn.Text = "Add New Equipment";
+            this.ane_btn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.addAsset_pnl);
             this.Controls.Add(this.exitApp_btn);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.ane_btn);
+            this.Controls.Add(this.addAsset_pnl);
+            this.Controls.Add(this.vaa_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.addAsset_btn);
             this.Controls.Add(this.label1);
@@ -291,12 +302,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.addAsset_pnl.ResumeLayout(false);
             this.addAsset_pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetRegisterdbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetRegister_dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelInventoryTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetRegisterdbDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,8 +322,7 @@
         private System.Windows.Forms.TextBox addAssetNum_txtbx;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button exitApp_btn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button vaa_btn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button addAsset_btn;
         private System.Windows.Forms.Button addAssetBack_btn;
@@ -329,6 +339,8 @@
         private System.Windows.Forms.BindingSource modelInventoryTableBindingSource;
         private AssetRegister_dbDataSet1TableAdapters.modelInventoryTableTableAdapter modelInventoryTableTableAdapter;
         private System.Windows.Forms.BindingSource modelInventoryTableBindingSource1;
+        private System.Windows.Forms.Button exitApp_btn;
+        private System.Windows.Forms.Button ane_btn;
     }
 }
 

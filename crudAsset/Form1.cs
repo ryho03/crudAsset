@@ -82,20 +82,17 @@ namespace crudAsset
         private void button4_Click(object sender, EventArgs e)
         {
             AutoClosingMessageBox.Show("Uploading asset to database", "Uploading", 2000);
-            string cmdString = "INSERT INTO assestRegisterTable (ColName) VALUES (@val1)";
+            
+        }
 
-            using (connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand comm = new SqlCommand(cmdString, connection))
-                {
-                    connection.Open();
-                    comm.Connection = connection;
-                    comm.CommandText = cmdString;
-                    comm.Parameters.AddWithValue("@val1", nameTextBox.Text);
+        private void ane_btn_Click(object sender, EventArgs e)
+        {
 
-                    comm.ExecuteNonQuery();
-                }
-            }
+        }
+
+        private void vaa_btn_Click(object sender, EventArgs e)
+        {
+            AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
 
         }
     }
