@@ -11,22 +11,17 @@ using System.Windows.Forms;
 
 namespace crudAsset
 {
-    public partial class Form1 : Form
+    public partial class aar_Form : Form
     {
-        public Form1()
+        public aar_Form()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void aar_Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'assetRegister_dbDataSet1.modelInventoryTable' table. You can move, or remove it, as needed.
-            this.modelInventoryTableTableAdapter.Fill(this.assetRegister_dbDataSet1.modelInventoryTable);
-            // TODO: This line of code loads data into the 'assetRegister_dbDataSet.userTable' table. You can move, or remove it, as needed.
-            this.userTableTableAdapter.Fill(this.assetRegister_dbDataSet.userTable);
 
         }
-
         public class AutoClosingMessageBox
         {
             System.Threading.Timer _timeoutTimer;
@@ -57,20 +52,8 @@ namespace crudAsset
             static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            addAsset_pnl.Visible = false;
-        }
 
-        private void addAsset_btn_Click_1(object sender, EventArgs e)
-        {
-            {
-                AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
-                addAsset_pnl.Visible = true;
-            }
-        }
-
-        private void exitApp_btn_Click_1(object sender, EventArgs e)
+        private void aarExit_btn_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
@@ -79,21 +62,34 @@ namespace crudAsset
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void vaa_btn_Click(object sender, EventArgs e)
         {
-            AutoClosingMessageBox.Show("Uploading asset to database", "Uploading", 2000);
-            
+            AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
+            this.Hide();
+            vaa_Form myNewForm = new vaa_Form();
+            myNewForm.Show();
+
+        }
+
+        private void aa_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ra_btn_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ane_btn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void vaa_btn_Click(object sender, EventArgs e)
-        {
             AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
-
+            this.Hide();
+            addNewEquip_Form myNewForm = new addNewEquip_Form();
+            myNewForm.Show();
         }
     }
 }
+
+    
+   
