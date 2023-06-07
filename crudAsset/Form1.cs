@@ -73,12 +73,18 @@ namespace crudAsset
 
         private void aa_btn_Click(object sender, EventArgs e)
         {
-
+            AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
+            this.Hide();
+            assignAsset_Form myNewForm = new assignAsset_Form();
+            myNewForm.Show();
         }
 
         private void ra_btn_Click(object sender, EventArgs e)
         {
-
+            AutoClosingMessageBox.Show("Loading...", "Loading", 1000);
+            this.Hide();
+            retireAsset_Form myNewForm = new retireAsset_Form();
+            myNewForm.Show();
         }
 
         private void ane_btn_Click(object sender, EventArgs e)

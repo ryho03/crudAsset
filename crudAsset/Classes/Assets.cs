@@ -9,11 +9,11 @@ namespace crudAsset
 {
     public class Asset
     {
-        public int assetID { get; set; }
-        public string assetManufacturer { get; set; }
-        public string assetType { get; set; }
-        public string assetModel { get; set; }
-        public string assignedUser { get; set; }
+        public string itemAssetID { get; set; }
+        public string itemManufacturer { get; set; }
+        public string itemType { get; set; }
+        public string itemModel { get; set; }
+        public string itemAssignedUser { get; set; }
 
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ryanh\\source\\repos\\crudAsset\\crudAsset\\AssetRegister_db.mdf;Integrated Security=True";
 
@@ -23,7 +23,7 @@ namespace crudAsset
 
             SqlConnection con = new SqlConnection(connectionString);
 
-            string selectSQL = "select assetID, assetManufacturer, assetType, assetModel, assignedUser from assetRegisterTable";
+            string selectSQL = "select itemAssetID, itemManufacturer, itemType, itemModel, itemAssignedUser from modelInventoryTable";
 
             con.Open();
 
@@ -37,11 +37,11 @@ namespace crudAsset
                 {
                     Asset asset = new Asset();
 
-                    asset.assetID = Convert.ToInt32(dr["Asset ID"]);
-                    asset.assetManufacturer = dr["Asset Manufacturer"].ToString();
-                    asset.assetType = dr["Asset Type"].ToString();
-                    asset.assetModel = dr["Asset Model"].ToString();
-                    asset.assignedUser = dr["Assigned User"].ToString();
+                    asset.itemAssetID = dr["itemAssetID"].ToString();
+                    asset.itemManufacturer = dr["itemManufacturer"].ToString();
+                    asset.itemType = dr["itemType"].ToString();
+                    asset.itemModel = dr["itemModel"].ToString();
+                    asset.itemAssignedUser = dr["itemAssignedUser"].ToString();
 
                     assetList.Add(asset);
 
@@ -59,6 +59,8 @@ namespace crudAsset
         public string itemType { get; set; }
         public string itemModel { get; set; }
         public string itemAssetId { get; set; }
+        public string itemAssignedUser { get; set; }
+
 
         string connectionStringATI = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ryanh\\source\\repos\\crudAsset\\crudAsset\\AssetRegister_db.mdf;Integrated Security=True";
 
@@ -78,6 +80,52 @@ namespace crudAsset
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public void RemoveFromInventory(InventoryItem inventoryitem)
+        {
+            SqlConnection con = new SqlConnection(connectionStringATI);
+
+            SqlCommand cmd = new SqlCommand("RemoveFromInventory", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+//            cmd.Parameters.Add(new SqlParameter("@itemManufacturer", inventoryitem.itemManufacturer));
+//            cmd.Parameters.Add(new SqlParameter("@itemType", inventoryitem.itemType));
+//            cmd.Parameters.Add(new SqlParameter("@itemModel", inventoryitem.itemModel));
+            cmd.Parameters.Add(new SqlParameter("@itemAssetId", inventoryitem.itemAssetId));
+//            cmd.Parameters.Add(new SqlParameter("@itemAssignedUser", inventoryitem.itemAssignedUser));
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 
+    public class AssignUser
+    { 
+        
+        public string itemAssignedUser { get; set;}
+        public string itemAssetId  { get; set;}
+
+        string connectionStringAI = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ryanh\\source\\repos\\crudAsset\\crudAsset\\AssetRegister_db.mdf;Integrated Security=True";
+
+        public void AssignToAsset(AssignUser assignuser)
+        {
+            SqlConnection con = new SqlConnection(connectionStringAI);
+
+            SqlCommand cmd = new SqlCommand("UpdateInventory", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("@itemAssignedUser", assignuser.itemAssignedUser));
+            cmd.Parameters.Add(new SqlParameter("@itemAssetId", assignuser.itemAssetId));
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
+
+
+
+    }
 }
